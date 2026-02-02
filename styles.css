@@ -59,10 +59,10 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 80px;
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000' stroke-width='1'%3E%3Cpath d='M0 20h40M20 0v40M0 0l40 40M40 0L0 40'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 40px 40px;
-    opacity: 0.15;
+    width: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20L10 10L0 0M10 20L20 10L10 0' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-size: 20px 20px;
+    opacity: 0.2;
 }
 
 .pattern-left {
@@ -293,35 +293,39 @@ section {
     border-bottom: 1px solid var(--gray-200);
 }
 
-.projects-list {
-    display: flex;
-    flex-direction: column;
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-.project-item {
+.project-card {
     padding: 1.5rem;
     border: 1px solid var(--gray-200);
     background: var(--white);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
-.project-item:hover {
+.project-card:hover {
     border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .project-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     gap: 1rem;
 }
 
-.project-item h3 {
+.project-card h3 {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--black);
+    line-height: 1.3;
 }
 
 .project-tag {
@@ -332,18 +336,21 @@ section {
     border: 1px solid var(--accent);
     padding: 0.25rem 0.5rem;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.project-item p {
-    font-size: 0.95rem;
+.project-card p {
+    font-size: 0.9rem;
     color: var(--gray-600);
     line-height: 1.6;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
 }
 
 .project-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .project-links a {
@@ -412,7 +419,7 @@ section {
    =========================== */
 @media (max-width: 768px) {
     .pattern-border {
-        width: 40px;
+        width: 60px;
     }
     
     .nav-menu {
@@ -444,6 +451,10 @@ section {
     }
     
     .interests-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
         grid-template-columns: 1fr;
     }
 }
