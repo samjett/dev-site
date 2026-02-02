@@ -25,6 +25,24 @@
     --transition: all 0.2s ease;
 }
 
+body.dark-mode {
+    --accent: #a78bfa;
+    --accent-dark: #9575f6;
+    
+    --black: #ffffff;
+    --white: #000000;
+    --gray-50: #171717;
+    --gray-100: #1f1f1f;
+    --gray-200: #262626;
+    --gray-300: #404040;
+    --gray-400: #737373;
+    --gray-500: #a3a3a3;
+    --gray-600: #d4d4d4;
+    --gray-700: #e5e5e5;
+    --gray-800: #f5f5f5;
+    --gray-900: #fafafa;
+}
+
 /* ===========================
    Reset & Base
    =========================== */
@@ -56,15 +74,19 @@ body {
    Geometric Pattern (SVG)
    =========================== */
 .pattern-border {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
-    width: 240px;
+    width: 312px;
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L20 20L0 0M20 40L40 20L20 0' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E");
     background-size: 40px 40px;
     opacity: 1;
+    z-index: 0;
+    pointer-events: none;
 }
-
+body.dark-mode .pattern-border {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L20 20L0 0M20 40L40 20L20 0' stroke='%23fff' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+}
 .pattern-left {
     left: 0;
     mask-image: linear-gradient(to right, black, transparent);
@@ -114,6 +136,27 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: 1px solid var(--gray-300);
+    color: var(--gray-600);
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.dark-mode-toggle:hover {
+    background: var(--gray-100);
+    border-color: var(--gray-400);
 }
 
 .nav-link {
@@ -136,6 +179,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    z-index: 1;
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
 }
@@ -210,6 +254,8 @@ body {
    =========================== */
 section {
     padding: 5rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -432,7 +478,7 @@ section {
    =========================== */
 @media (max-width: 768px) {
     .pattern-border {
-        width: 150px;
+        width: 195px;
     }
     
     .nav-menu {
@@ -474,7 +520,7 @@ section {
 
 @media (max-width: 480px) {
     .pattern-border {
-        width: 80px;
+        width: 104px;
     }
     
     .hero-title {
