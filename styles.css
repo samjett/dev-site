@@ -68,6 +68,8 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* ===========================
@@ -118,6 +120,8 @@ body.dark-mode .pattern-border {
     align-items: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .nav-brand {
@@ -179,7 +183,6 @@ body.dark-mode .pattern-border {
     display: flex;
     align-items: center;
     position: relative;
-    z-index: 1;
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
 }
@@ -255,7 +258,6 @@ body.dark-mode .pattern-border {
 section {
     padding: 5rem 0;
     position: relative;
-    z-index: 1;
 }
 
 .section-title {
@@ -467,6 +469,8 @@ section {
     color: var(--gray-400);
     text-align: center;
     padding: 1.5rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .footer p {

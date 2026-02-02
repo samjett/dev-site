@@ -199,13 +199,15 @@
     </footer>
 
     <script>
-        // Dark mode toggle
+        // Dark mode toggle with system preference
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
 
-        // Check for saved preference
-        const darkMode = localStorage.getItem('darkMode');
-        if (darkMode === 'enabled') {
+        // Check for saved preference, otherwise use system preference
+        const savedDarkMode = localStorage.getItem('darkMode');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedDarkMode === 'enabled' || (savedDarkMode === null && prefersDark)) {
             body.classList.add('dark-mode');
         }
 
