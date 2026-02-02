@@ -59,10 +59,10 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 180px;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20L10 10L0 0M10 20L20 10L10 0' stroke='%23000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E");
-    background-size: 20px 20px;
-    opacity: 0.35;
+    width: 240px;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L20 20L0 0M20 40L40 20L20 0' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+    background-size: 40px 40px;
+    opacity: 1;
 }
 
 .pattern-left {
@@ -285,6 +285,19 @@ section {
     line-height: 1.6;
 }
 
+.interest-card a,
+.project-card p a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.interest-card a:hover,
+.project-card p a:hover {
+    color: var(--accent);
+}
+
 /* ===========================
    Projects Section
    =========================== */
@@ -419,7 +432,7 @@ section {
    =========================== */
 @media (max-width: 768px) {
     .pattern-border {
-        width: 100px;
+        width: 150px;
     }
     
     .nav-menu {
@@ -461,7 +474,7 @@ section {
 
 @media (max-width: 480px) {
     .pattern-border {
-        display: none;
+        width: 80px;
     }
     
     .hero-title {
