@@ -79,7 +79,7 @@ body {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 312px;
+    width: 281px;
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L20 20L0 0M20 40L40 20L20 0' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E");
     background-size: 40px 40px;
     opacity: 1;
@@ -289,12 +289,16 @@ section {
 
 .about-content {
     max-width: 650px;
+    padding: 1.5rem;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
 }
 
 .about-content p {
     font-size: 1.1rem;
     color: var(--gray-700);
     line-height: 1.8;
+    margin-bottom: 1.25rem;
 }
 
 /* ===========================
@@ -484,7 +488,7 @@ section {
    =========================== */
 @media (max-width: 768px) {
     .pattern-border {
-        width: 195px;
+        width: 176px;
     }
     
     .nav-menu {
@@ -526,7 +530,7 @@ section {
 
 @media (max-width: 480px) {
     .pattern-border {
-        width: 104px;
+        width: 94px;
     }
     
     .hero-title {
