@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-mode">
-<head>
+<html lang="en" class="dark-mode"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sam Jett - Stanford CS & Physics">
+    <meta name="description" content="Sam Jett - Stanford CS &amp; Physics">
     <title>Sam Jett</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,8 +16,8 @@
             <a href="#home" class="nav-brand">SAM JETT</a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#interests" class="nav-link">Interests</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#interests" class="nav-link">Interests</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-burger" id="navBurger" aria-label="Menu">≡</button>
@@ -33,61 +32,29 @@
     <!-- About -->
     <section id="about" class="section-alt">
         <div class="container">
-            <div class="section-eyebrow"><span>About</span></div>
             <h2 class="section-title">About</h2>
             <div class="about-content">
-                <p>I do gamma-ray detector research with KIPAC at SLAC on GammaTPC... lots of particle physics, nuclear stuff, simulation, ML, and hardware. I studied Physics (Quantum Information) as an undergrad and did quantum computing work with Fraunhofer Gesellschaft SCAI in Germany. More recently discovered how much I enjoy computer systems and graphics, so now I'm doing a coterm in CS.</p>
+                <p>I currently work under the Kernels and Ops team at Tenstorrent. I'm big into novel hardware, open-source, and local systems.<br><br>At Stanford, I did gamma-ray detector research with KIPAC at SLAC on GammaTPC... lots of particle physics, nuclear stuff, simulation, ML, and hardware. I studied Physics (Quantum Information) as an undergrad and did quantum computing work with Fraunhofer Gesellschaft SCAI in Germany. After this I discovered how much I enjoy computer systems and graphics, so I did a master's in CS. I ended up spending a lot of time on the LX classes, which was a blast to say the least... got to do stuff all over, from FPGAs to apps.</p>
                 <p>Free time is often about music. I play piano, cello, and guitar—tried to double major but ended up with a 56-unit minor instead. Used to teach instruments and did piano technician work at a music store back home. I compose and occasionally conduct, and I'm currently working on video game development (including soundtracks) with Seamus Allen.</p>
-                <p>I also run a homelab (dormlab?) and keep Stanford IT on their toes. When my eyes need a break, I read outside or play board games. Twilight Imperium 4e before bed is peak.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interests -->
-    <section id="interests">
-        <div class="container">
-            <div class="section-eyebrow"><span>Interests</span></div>
-            <h2 class="section-title">Interests</h2>
-            <div class="grid">
-                <div class="card" id="card-graphics">
-                    <h3>Graphics &amp; Shaders</h3>
-                    <p>Volumetric rendering, real-time graphics, GPU programming with CUDA and GLSL.</p>
-                </div>
-                <div class="card" id="card-systems">
-                    <h3>Systems Programming</h3>
-                    <p>Embedded systems, operating systems, hardware accelerators, bare-metal development.</p>
-                </div>
-                <div class="card" id="card-gamedev">
-                    <h3>Game Development</h3>
-                    <p>Physics systems, audio engines, netcode. Published game on Steam.</p>
-                </div>
-                <div class="card" id="card-hardware">
-                    <h3>Hardware Tinkering</h3>
-                    <p>PCB rework, BGA soldering, GPU modding, circuit stuff.</p>
-                </div>
-                <div class="card" id="card-music">
-                    <h3>Music</h3>
-                    <p>Piano, cello, guitar. Composition, orchestral conducting, audio production. Professional piano tuning, maintenance, and repair.</p>
-                </div>
-                <div class="card" id="card-homelab">
-                    <h3>Homelab</h3>
-                    <p>Self-hosting numerous services and devices on personal server, including a couple <a href="https://tenstorrent.com/hardware/blackhole" target="_blank" rel="noopener noreferrer">Tenstorrent Blackholes</a>!</p>
-                </div>
+                <p>I also run a homelab (dormlab?) and definitely cause no annoyance for Stanford IT. When my eyes need a break, I read outside, go biking, play board games, or just yap. Twilight Imperium 4e before bed is peak.</p>
             </div>
         </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section-alt">
+    <section id="projects">
         <div class="container">
-            <div class="section-eyebrow"><span>Projects</span></div>
             <h2 class="section-title">Projects</h2>
             <div class="grid">
                 <div class="card">
-                    <div class="meta">Research</div>
-                    <h3>Gamma-Ray Detector (GammaTPC)</h3>
-                    <p>Simulation framework for MeV-GeV range gamma-ray detector sensitivity analysis. Demonstrated 100x improvement over competing designs. Proposal submitted to NASA.</p>
-                    <div class="links"><a href="https://arxiv.org/abs/2502.14841" target="_blank" rel="noopener noreferrer">arXiv:2502.14841 →</a></div>
+                    <div class="meta">Hardware</div>
+                    <h3>Flock ALPR Detector</h3>
+                    <p>Portable device that sends push notifications to your phone when in proximity of a Flock ALPR. Useful for finding novel deployments.</p>
+                </div>
+                <div class="card">
+                    <div class="meta">FPGA</div>
+                    <h3>Dual Architecture CPU</h3>
+                    <p>CPU that runs ARMv6-M and RV32IMC on same core. Verified running CS140E, CS240LX labs on Xilinx FPGA.</p>
                 </div>
                 <div class="card">
                     <div class="meta">Game Dev</div>
@@ -96,14 +63,83 @@
                     <div class="links"><a href="https://store.steampowered.com/app/4137040/" target="_blank" rel="noopener noreferrer">View on Steam →</a></div>
                 </div>
                 <div class="card">
+                    <div class="meta">Open Source</div>
+                    <h3>Tenstorrent</h3>
+                    <p>Windows driver, llama.cpp backend features and improvements, network fabric optimization (release TBD), harder drive tetris-ception SIG-BOVIK-style. MacOS driver attempted.</p>
+                </div>
+                <div class="card">
+                    <div class="meta">FPGA</div>
+                    <h3>FPGA Nanochat</h3>
+                    <p>&gt;120,000 tok/s inference.</p>
+                </div>
+                <div class="card">
+                    <div class="meta">FPGA · Audio</div>
+                    <h3>Neural Amp Modeler in HW</h3>
+                    <p>FPGA implementation of NAM for ultra-low-latency output. WIP.</p>
+                </div>
+                <div class="card">
+                    <div class="meta">AI Agents</div>
+                    <h3>Minecraft Pal</h3>
+                    <p>Self-improving, local Minecraft AI agent. WIP, currently gets iron gear.</p>
+                </div>
+                <div class="card">
+                    <div class="meta">AI Agents</div>
+                    <h3>Job Platform</h3>
+                    <p>Multi-user locally running agentic overnight job search and evaluation service with profiles and feedback. 100% satisfaction so far...</p>
+                </div>
+                <div class="card">
+                    <div class="meta">Embedded</div>
+                    <h3>Flock Detector</h3>
+                    <p>Embedded program to detect birds and displays detected birds over web interface. Not to be confused with my Flock ALPR Detector.</p>
+                </div>
+                <div class="card">
+                    <div class="meta">Research</div>
+                    <h3>Gamma-Ray Detector (GammaTPC)</h3>
+                    <p>Simulation framework for MeV-GeV range gamma-ray detector sensitivity analysis. Demonstrated 100x improvement over competing designs. Proposal submitted to NASA.</p>
+                    <div class="links"><a href="https://arxiv.org/abs/2502.14841" target="_blank" rel="noopener noreferrer">arXiv:2502.14841 →</a></div>
+                </div>
+                <div class="card">
                     <div class="meta">Hardware</div>
                     <h3>RTX 3070 VRAM Upgrade</h3>
                     <p>Upgraded GPU from 8GB to 16GB VRAM using circuit analysis and BGA rework. <a href="https://www.youtube.com/watch?v=jA4Bhw1S_2o" target="_blank" rel="noopener noreferrer">4090, you're next</a>.</p>
                 </div>
                 <div class="card">
                     <div class="meta">Research</div>
-                    <h3>Quantum Error Correction</h3>
+                    <h3>Quantum Circuit Gen</h3>
                     <p>Generative transformer models for predicting and mitigating noise in quantum circuits. Method scales linearly with system size compared to polynomial scaling of existing approaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests -->
+    <section id="interests" class="section-alt">
+        <div class="container">
+            <h2 class="section-title">Interests</h2>
+            <div class="grid">
+                <div class="card" id="card-systems">
+                    <h3>Systems Programming</h3>
+                    <p>Embedded systems, operating systems, hardware accelerators, bare-metal development.</p>
+                </div>
+                <div class="card" id="card-homelab">
+                    <h3>Homelab</h3>
+                    <p>Self-hosting numerous services and devices on personal server, including a couple <a href="https://tenstorrent.com/hardware/blackhole" target="_blank" rel="noopener noreferrer">Tenstorrent Blackholes</a>!</p>
+                </div>
+                <div class="card" id="card-gamedev">
+                    <h3>Game Development</h3>
+                    <p>Physics systems, audio engines, netcode. Published game on Steam.</p>
+                </div>
+                <div class="card" id="card-hardware">
+                    <h3>Hardware Tinkering</h3>
+                    <p>FPGAs, audio circuits, PCB rework, BGA soldering, GPU modding, circuit stuff.</p>
+                </div>
+                <div class="card" id="card-music">
+                    <h3>Music</h3>
+                    <p>Piano, cello, guitar. Composition, orchestral conducting, audio production. Professional piano tuning, maintenance, and repair.</p>
+                </div>
+                <div class="card" id="card-graphics">
+                    <h3>Graphics &amp; Shaders</h3>
+                    <p>Volumetric rendering, real-time graphics, GPU programming with CUDA and GLSL.</p>
                 </div>
             </div>
         </div>
@@ -112,7 +148,6 @@
     <!-- Contact -->
     <section id="contact">
         <div class="container">
-            <div class="section-eyebrow"><span>Contact</span></div>
             <h2 class="section-title">Contact</h2>
             <a href="https://www.linkedin.com/in/sam-jett-851247252" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn</a>
         </div>
@@ -133,5 +168,4 @@
             if (e.target.classList.contains('nav-link')) menu.classList.remove('open');
         });
     </script>
-</body>
-</html>
+</body></html>

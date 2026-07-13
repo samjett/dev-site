@@ -177,26 +177,6 @@ a:hover { color: var(--accent); }
 /* ---- Sections ---- */
 section { padding: 5rem 0; border-top: 1px solid var(--gray-200); }
 .section-alt { background: var(--gray-50); }
-.section-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-.section-eyebrow::before {
-  content: "";
-  width: 24px;
-  height: 2px;
-  background: var(--accent);
-}
-.section-eyebrow span {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gray-600);
-}
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 40px);
@@ -205,6 +185,15 @@ section { padding: 5rem 0; border-top: 1px solid var(--gray-200); }
   line-height: 1.1;
   color: var(--black);
   margin-bottom: 1.75rem;
+}
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  background: var(--accent);
+  margin-right: 0.9rem;
+  vertical-align: middle;
 }
 .about-content { max-width: 680px; font-size: 1.05rem; line-height: 1.7; }
 .about-content p { margin-bottom: 1rem; }
