@@ -4,12 +4,12 @@
   "use strict";
 
   var NETS = [
-    { id: "systems", label: "Systems", desc: "Embedded systems, operating systems, hardware accelerators, bare-metal development." },
-    { id: "hardware", label: "Hardware", desc: "PCB rework, BGA soldering, GPU modding, circuit stuff." },
-    { id: "gamedev", label: "Game Dev", desc: "Physics systems, audio engines, netcode. Published game on Steam." },
-    { id: "music", label: "Music", desc: "Piano, cello, guitar. Composition, conducting, audio production." },
-    { id: "homelab", label: "Homelab", desc: "Self-hosting numerous services and devices, including a couple Tenstorrent Blackholes!" },
-    { id: "graphics", label: "Graphics", desc: "Volumetric rendering, real-time graphics, GPU programming with CUDA and GLSL." }
+    { id: "systems", label: "Systems" },
+    { id: "hardware", label: "Hardware" },
+    { id: "gamedev", label: "Game Dev" },
+    { id: "music", label: "Music" },
+    { id: "homelab", label: "Homelab" },
+    { id: "graphics", label: "Graphics" }
   ];
 
   var DESKTOP = {
@@ -17,7 +17,6 @@
     chip: "M130 160 H406 L450 204 V540 H130 Z",
     pin1: [158, 512],
     name: { left: 150, top: 200, width: 280, size: 64, meta: 13 },
-    readout: { left: 44, bottom: 36, maxWidth: 420 },
     stubs: [
       "M130 200 H70 L40 230 V300", "M130 240 H90", "M130 300 H60 L20 340 V430",
       "M130 360 H80 L50 390 H10", "M130 480 H70", "M330 160 V120 L360 90 H420", "M250 160 V110"
@@ -66,7 +65,6 @@
     chip: "M40 40 H276 L320 84 V210 H40 Z",
     pin1: [66, 184],
     name: { left: 58, top: 66, width: 220, size: 44, meta: 11 },
-    readout: { left: 12, bottom: 8, maxWidth: 260 },
     stubs: ["M40 90 H16", "M40 130 H24 L10 116", "M120 40 V16", "M200 40 V20 L214 6"],
     stubVias: [[16, 90], [10, 116], [120, 16], [214, 6]],
     nets: [0, 1, 2, 3, 4, 5].map(compactNet)
@@ -105,8 +103,10 @@
     });
 
     var groups = {};
+    var netGeo = {};
     geo.nets.forEach(function (n, i) {
       var net = NETS[i];
+      netGeo[net.id] = n;
       var g = svgEl("g", { class: "net-group", "data-net": net.id });
       n.traces.forEach(function (d) {
         g.appendChild(svgEl("path", { class: "trace", d: d, "stroke-width": 1.5 }));
@@ -138,12 +138,6 @@
     name.appendChild(meta);
     stage.appendChild(name);
 
-    // readout
-    var readout = document.createElement("div");
-    readout.className = "board-readout";
-    readout.style.cssText = "left:" + geo.readout.left + "px;bottom:" + geo.readout.bottom + "px;max-width:" + geo.readout.maxWidth + "px";
-    stage.appendChild(readout);
-
     // silkscreen labels
     geo.nets.forEach(function (n, i) {
       var net = NETS[i];
@@ -165,15 +159,8 @@
         el.addEventListener("mouseenter", function () { setHot(id, true); });
         el.addEventListener("mouseleave", function () { setHot(id, false); });
         el.addEventListener("click", function () {
-          var net = NETS.filter(function (n) { return n.id === id; })[0];
-          readout.textContent = net.desc;
-          readout.classList.add("hot");
-          var card = document.getElementById("card-" + id);
-          if (card) {
-            var top = card.getBoundingClientRect().top + window.scrollY - 90;
-            window.scrollTo({ top: top, behavior: "smooth" });
-            card.classList.add("flash");
-            setTimeout(function () { card.classList.remove("flash"); }, 1800);
+          for (var b = 0; b < 6; b++) {
+            setTimeout(function () { spawn(netGeo[id], true); }, b * 130);
           }
         });
       });
@@ -181,9 +168,9 @@
 
     // pips
     var live = 0;
-    function spawn() {
-      if (live >= 14 || !document.body.contains(stage)) return;
-      var n = geo.nets[Math.floor(Math.random() * geo.nets.length)];
+    function spawn(onNet, burst) {
+      if (live >= (burst ? 26 : 14) || !document.body.contains(stage)) return;
+      var n = onNet || geo.nets[Math.floor(Math.random() * geo.nets.length)];
       var violet = Math.random() < 0.45;
       var size = violet ? 7 : 5;
       var pip = document.createElement("div");

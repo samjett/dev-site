@@ -151,16 +151,6 @@ a:hover { color: var(--accent); }
   color: var(--silk);
   margin-top: 14px;
 }
-.board-readout {
-  position: absolute;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--silk);
-  line-height: 1.6;
-}
-.board-readout.hot { color: var(--pip-violet); }
 .net-group { cursor: pointer; }
 .net-group .trace { stroke: var(--trace); transition: stroke 0.15s ease; }
 .net-group.hot .trace { stroke: var(--pip-violet); }
@@ -210,7 +200,7 @@ section { padding: 5rem 0; border-top: 1px solid var(--gray-200); }
   padding: 1.25rem 1.4rem;
   transition: var(--transition);
 }
-.card.flash, .card:hover { border-color: var(--accent); }
+.card:hover { border-color: var(--accent); }
 .card .meta {
   font-family: var(--font-mono);
   font-size: 10px;
