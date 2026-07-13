@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        // Apply theme before first paint
-        (function () {
-            var saved = localStorage.getItem('darkMode');
-            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (saved === 'enabled' || (saved === null && prefersDark)) {
-                document.documentElement.classList.add('dark-mode');
-            }
-        })();
-    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,7 +20,6 @@
                 <li><a href="#interests" class="nav-link">Interests</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><button class="theme-toggle" id="darkModeToggle" aria-label="Toggle dark mode">◐</button></li>
             </ul>
             <button class="nav-burger" id="navBurger" aria-label="Menu">≡</button>
         </div>
@@ -138,18 +127,10 @@
     <!-- Footer -->
     <footer class="footer">
         <span>© 2026 Sam Jett</span>
-        <span>SJ-590A · REV C</span>
     </footer>
 
     <script src="board.js"></script>
     <script>
-        // Dark mode toggle (persisted)
-        var darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', function () {
-            var root = document.documentElement;
-            root.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', root.classList.contains('dark-mode') ? 'enabled' : 'disabled');
-        });
         // Mobile menu
         var burger = document.getElementById('navBurger');
         var menu = document.getElementById('navMenu');

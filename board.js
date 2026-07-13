@@ -18,7 +18,6 @@
     pin1: [158, 512],
     name: { left: 150, top: 200, width: 280, size: 64, meta: 13 },
     readout: { left: 44, bottom: 36, maxWidth: 420 },
-    rev: { right: 44, bottom: 36 },
     stubs: [
       "M130 200 H70 L40 230 V300", "M130 240 H90", "M130 300 H60 L20 340 V430",
       "M130 360 H80 L50 390 H10", "M130 480 H70", "M330 160 V120 L360 90 H420", "M250 160 V110"
@@ -68,7 +67,6 @@
     pin1: [66, 184],
     name: { left: 58, top: 66, width: 220, size: 44, meta: 11 },
     readout: { left: 12, bottom: 8, maxWidth: 260 },
-    rev: null,
     stubs: ["M40 90 H16", "M40 130 H24 L10 116", "M120 40 V16", "M200 40 V20 L214 6"],
     stubVias: [[16, 90], [10, 116], [120, 16], [214, 6]],
     nets: [0, 1, 2, 3, 4, 5].map(compactNet)
@@ -144,16 +142,7 @@
     var readout = document.createElement("div");
     readout.className = "board-readout";
     readout.style.cssText = "left:" + geo.readout.left + "px;bottom:" + geo.readout.bottom + "px;max-width:" + geo.readout.maxWidth + "px";
-    readout.textContent = "SELECT A NET →";
     stage.appendChild(readout);
-
-    if (geo.rev) {
-      var rev = document.createElement("div");
-      rev.className = "board-rev";
-      rev.style.cssText = "right:" + geo.rev.right + "px;bottom:" + geo.rev.bottom + "px";
-      rev.textContent = "SJ-590A · REV C";
-      stage.appendChild(rev);
-    }
 
     // silkscreen labels
     geo.nets.forEach(function (n, i) {
