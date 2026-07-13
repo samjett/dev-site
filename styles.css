@@ -283,6 +283,17 @@ section { padding: 5rem 0; border-top: 1px solid var(--gray-200); }
   color: var(--silk);
 }
 
+/* Touch devices: board labels read as tappable chips */
+@media (hover: none) {
+  .silk-label {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 8px;
+    margin: -5px -9px; /* offset the padding so the label stays at its tuned board position */
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 720px) {
   .navbar .inner { padding: 0.9rem 1.25rem; }
