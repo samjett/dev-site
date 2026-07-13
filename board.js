@@ -6,7 +6,7 @@
   var NETS = [
     { id: "systems", label: "Systems", desc: "Embedded systems, operating systems, hardware accelerators, bare-metal development." },
     { id: "hardware", label: "Hardware", desc: "PCB rework, BGA soldering, GPU modding, circuit stuff." },
-    { id: "gamedev", label: "Game_Dev", desc: "Physics systems, audio engines, netcode. Published game on Steam." },
+    { id: "gamedev", label: "Game Dev", desc: "Physics systems, audio engines, netcode. Published game on Steam." },
     { id: "music", label: "Music", desc: "Piano, cello, guitar. Composition, conducting, audio production." },
     { id: "homelab", label: "Homelab", desc: "Self-hosting numerous services and devices, including a couple Tenstorrent Blackholes!" },
     { id: "graphics", label: "Graphics", desc: "Volumetric rendering, real-time graphics, GPU programming with CUDA and GLSL." }
